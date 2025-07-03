@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRouter from "./src/routes/authRoutes.js";
-
+import userRouter from "./src/routes/userRoutes.js";
+import questionRouter from './src/routes/questionRoutes.js'
 
 dotenv.config();
 
@@ -18,7 +18,8 @@ const startServer = async () => {
     await mongoose.connect(process.env.MONGODB_URL);
     console.log("MongoDB loged in susccesfully");
 
-    app.use("/users", authRouter);
+    app.use("/users", userRouter);
+    app.use("/questions", questionRouter);
 
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
