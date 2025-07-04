@@ -29,6 +29,10 @@ const answerSchema = new mongoose.Schema({
     type: Number,
     default: 0.
   },
+  liked_by: {
+    type: [String],
+    default: []
+  }
 });
 
 const Answer = mongoose.model("Answer",answerSchema);

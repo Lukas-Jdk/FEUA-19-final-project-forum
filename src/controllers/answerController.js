@@ -56,4 +56,37 @@ export const DELETE_ANSWER = async (req, res) => {
     res.status(500).json({message: "Server error by deleting answer"})
   }
 
+}
+
+export const LIKE_DISLIKE = async (req, res) => {
+
+  try {
+    const answerId = req.params.id;
+    const userId = req.user.userId;
+
+    const answer = await Answer.findOne({id:answerId});
+
+    if(!answer) {
+      return res.status(404).json({message: "Answer not found."});
+    }
+    const alreadyLiked = answer.liked_by.includes(userId);
+    
+    if(alreadyLiked) {
+      answer.liked_by = answer.liked_by.filter(id => id!== userId);
+      answer.gained_likes_number -= 1;
+    } else{
+      answer.liked_by.push(userId);
+      answer.gained_likes_number += 1;
+    }
+    await answer.save();
+  
+  res.status(200).json ({
+    message: alreadyLiked ? "Disliked" : "Liked",
+    likes: answer.gained_likes_number,
+  });
+}catch (error) {
+  console.error("Like error:",error);
+  res.status(500).json({message: "Server error togglink like / dislike"});
+}
+
 };
