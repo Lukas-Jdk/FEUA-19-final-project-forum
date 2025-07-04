@@ -3,7 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import userRouter from "./src/routes/userRoutes.js";
-import questionRouter from './src/routes/questionRoutes.js'
+import questionRouter from './src/routes/questionRoutes.js';
+import answerRouter from './src/routes/answerRoutes.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ const startServer = async () => {
 
     app.use("/users", userRouter);
     app.use("/questions", questionRouter);
+    app.use("/answers", answerRouter)
 
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);

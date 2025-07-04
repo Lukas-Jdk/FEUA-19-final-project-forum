@@ -1,5 +1,10 @@
 import express from 'express';
-import {CREATE_QUESTION, GET_ALL_QUESTIONS} from '../controllers/questionController.js';
+import {
+  CREATE_QUESTION, 
+  GET_ALL_QUESTIONS,
+  DELETE_QUESTION,
+  
+} from '../controllers/questionController.js';
 import authToken from '../middleware/authMiddleware.js';
 
 const router = express.Router();
@@ -7,5 +12,7 @@ const router = express.Router();
 router.post ("/", authToken, CREATE_QUESTION);
 
 router.get ("/", authToken, GET_ALL_QUESTIONS);
+
+router.delete("/:id", authToken, DELETE_QUESTION)
 
 export default router;
