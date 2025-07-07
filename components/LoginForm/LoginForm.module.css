@@ -1,0 +1,15 @@
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  border: 1px solid black;
+  max-width: 600px;
+  margin: auto;
+}
+
+.redWarrning {
+  color: red;
+}
