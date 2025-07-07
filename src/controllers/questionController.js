@@ -1,4 +1,5 @@
 import Question from '../models/Question.js';
+import Answer from '../models/Answer.js';
 
 export const CREATE_QUESTION = async (req, res) => {
   try {
@@ -21,6 +22,7 @@ export const CREATE_QUESTION = async (req, res) => {
   }
 };
 
+
 export const GET_ALL_QUESTIONS = async (req, res) => {
   try {
     const questions = await Question.find().sort({ date: -1 });
@@ -29,6 +31,30 @@ export const GET_ALL_QUESTIONS = async (req, res) => {
     res.status(500).json({message: "Server error fetching questions"})
   }
 };
+
+
+
+export const GET_FILTERED_QUESTIONS = async (req, res) => {
+  try {
+    const answered = req.query.answered === "true";
+    const collectAnswersId = await Answer.distinct("question_id");
+
+    let questions;
+
+    if (answered) {
+      questions = await Question.find({ id: { $in: collectAnswersId } });
+    } else {
+      questions = await Question.find({ id: { $nin: collectAnswersId } });
+    }
+
+    res.status(200).json({ questions });
+  } catch (error) {
+    console.error("Filter error", error);
+    res.status(500).json({ message: "Server error filtering questions." });
+  }
+};
+
+
 
 export const DELETE_QUESTION = async (req, res) => {
   try {
