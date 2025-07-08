@@ -28,28 +28,31 @@ const LoginForm = () => {
 
   return (
     <form className={styles.form} onSubmit={handleLogin}>
-  
-      <div>
+      <h1>LogIn</h1>
+      <div className={styles.userEmail}>
         <label>Email:</label>
         <input
           type="email"
           value={email}
           required
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
-      <div>
+      <div className={styles.userPassword}>
         <label>Password:</label>
         <input
           type="password"
           value={password}
           required
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-
-      <button type="submit">Login</button>
+      
+        <button type="submit">Login</button>
+      
 
       {error && <p className={styles.redWarrning}>{error}</p>}
     </form>

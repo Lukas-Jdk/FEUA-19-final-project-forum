@@ -1,15 +1,48 @@
-
-.form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.form {
   height: 500px;
-  border: 1px solid black;
   max-width: 600px;
-  margin: auto;
+  margin: 5rem auto;
+ border: 1px solid gray;
+}
+
+.form h1 {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .redWarrning {
   color: red;
+}
+.form input {
+  width: 50%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.userEmail {
+  padding-bottom: 1rem;
+}
+
+.userEmail,
+.userPassword {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form button {
+  width: 150px;
+  height: 35px;
+  border: 1px solid rgb(39, 30, 161);
+  margin: 1rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 15px;
 }

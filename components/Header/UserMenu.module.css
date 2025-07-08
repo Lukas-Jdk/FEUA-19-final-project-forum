@@ -1,0 +1,15 @@
+
+.navList {
+display: flex;
+gap: 2rem;
+list-style: none;
+}
+
+.navList  {
+ list-style: none;
+}
+
+.navList a {
+  text-decoration: none;
+
+}

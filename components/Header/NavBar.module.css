@@ -1,0 +1,11 @@
+
+
+.navList {
+display: flex;
+gap: 3rem;
+list-style: none;
+}
+
+.navList a {
+  text-decoration: none;
+}

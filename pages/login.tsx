@@ -1,11 +1,13 @@
 import styles from '../styles/login.module.css';
-import LoginForm from '../components/LoginForm/LoginForm'
+import LoginForm from '../components/LoginForm/LoginForm';
+import Layout from '../components/Layout/Layout';
 
 const login = () => {
   return (
-    <div>
+    <Layout>
+     
       <LoginForm  />
-    </div>
+    </Layout>
   )
 }
 
