@@ -1,0 +1,49 @@
+.registerForm{
+border: 1px solid black;
+max-width: 600px;
+margin: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 5rem;
+padding: 2rem 0;
+}
+
+.registerForm h1 {
+margin: 2rem 0;
+font-size: 2.5rem;
+}
+
+.inputGroup {
+  margin: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  max-width: 300px;
+}
+
+.inputGroup input {
+  padding: 0.5rem;
+
+}
+
+.registerForm button {
+  margin: 2rem 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.registerForm button:hover {
+  
+}
+
+
+
+.error {
+  color: red;
+
+}

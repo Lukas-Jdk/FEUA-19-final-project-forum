@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "@/axios/axios";
 import { useRouter } from "next/router";
 import styles from "./LoginForm.module.css";
 
@@ -12,13 +12,15 @@ const LoginForm = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/login", {
+      const response = await axios.post("http://localhost:3000/users/login", {
         email,
         password,
       });
 
-      const token = response.data.jwt;
-      localStorage.setItem("token", token);
+      const token = response.data.jwt || response.data.token;
+      if (token) {
+        localStorage.setItem("token", token);
+      }
       setError("");
       router.push("/");
     } catch (err: any) {
@@ -50,9 +52,8 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      
-        <button type="submit">Login</button>
-      
+
+      <button type="submit">Login</button>
 
       {error && <p className={styles.redWarrning}>{error}</p>}
     </form>
