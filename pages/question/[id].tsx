@@ -14,6 +14,7 @@ const QuestionPage = () => {
   const [question, setQuestion] = useState<Question | null>(null);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [error, setError] = useState("");
+  const [userId, setUserId] = useState<string | null>(null);
 
   const fetchData = async () => {
     try {
@@ -38,9 +39,23 @@ const QuestionPage = () => {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`questions/${question?.id}`);
+      router.push("/");
+    } catch (error) {
+      console.error("Delete failed", error);
+    }
+  };
+
   useEffect(() => {
-    if (id) fetchData();
-  }, [id]);
+    const storedId = localStorage.getItem("user_id");
+    setUserId(storedId);
+
+    if (id) {
+      fetchData();
+    }
+  }, []);
 
   return (
     <Layout>
@@ -53,6 +68,10 @@ const QuestionPage = () => {
             <p>User: {question.user_id}</p>
           </>
         )}
+
+       {question && userId === question.user_id && (
+  <button onClick={handleDelete}>Delete Question</button>
+)}
 
         <h2>Answers</h2>
         {answers.map((answer) => (

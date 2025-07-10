@@ -18,9 +18,16 @@ const LoginForm = () => {
       });
 
       const token = response.data.jwt || response.data.token;
-      if (token) {
+      const userId = response.data.user?.id;
+
+      if (token && userId) {
         localStorage.setItem("token", token);
       }
+      
+      if (response.data.user?.id) {
+  localStorage.setItem("user_id", response.data.user.id);
+}
+
       setError("");
       router.push("/");
     } catch (err: any) {

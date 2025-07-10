@@ -21,7 +21,7 @@ const QuestionCard: React.FC<Props> = ({ question }) => {
     {question.date ? new Date(question.date).toLocaleString() : "Date unavailable"}
   </p>
 
-  <p>{question.user_id.name}</p>
+  <p>{question.user_id}</p>
 </div>
   );
 };
