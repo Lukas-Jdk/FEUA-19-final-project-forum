@@ -14,7 +14,7 @@ const AnswerForm = ({ questionId, onNew }: Props) => {
     e.preventDefault();
 
     try {
-      await axios.post(`/question/${questionId}/answers`, {
+      await axios.post(`/answers/${questionId}`, {
         answer_text: text,
       });
       setText("");

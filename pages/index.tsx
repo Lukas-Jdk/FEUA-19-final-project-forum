@@ -5,8 +5,6 @@ import axios from '@/axios/axios';
 import { Question } from '@/types/types';
 import QuestionCard from '@/components/QuestionCard/QuestionCard';
 
-
-
 const HomePage = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [error, setError] = useState("");
@@ -23,9 +21,6 @@ const HomePage = () => {
     };
     fetchQuestions();
   },[]);
-
-
-
 
   return (
     <Layout>

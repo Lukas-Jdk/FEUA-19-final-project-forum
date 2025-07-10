@@ -5,8 +5,10 @@ import axios from "@/axios/axios";
 import Layout from "@/components/Layout/Layout";
 import AnswerCard from "@/components/AnswerCard/AnswerCard";
 import AnswerForm from "@/components/AnswerForm/AnswerForm";
+import authRedirect from "@/hooks/authRedirect";
 
 const QuestionPage = () => {
+  authRedirect();
   const router = useRouter();
   const { id } = router.query;
   const [question, setQuestion] = useState<Question | null>(null);
@@ -17,7 +19,9 @@ const QuestionPage = () => {
     try {
       // 1. Gauti visus klausimus ir rasti pagal ID
       const qRes = await axios.get("/questions");
-      const selected = qRes.data.questions.find((q: Question) => q.id === String(id));
+      const selected = qRes.data.questions.find(
+        (q: Question) => q.id === String(id)
+      );
       setQuestion(selected);
 
       if (!selected) {
