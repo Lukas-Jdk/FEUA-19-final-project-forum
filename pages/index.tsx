@@ -29,7 +29,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <main>
+      <main className={styles.mainContainer}>
         <div className={styles.cardWrapper}>
           <h1>Question List</h1>
           {error && <p>{error}</p>}
