@@ -1,5 +1,6 @@
 .headerWrapper {
   background-color: rgb(16, 107, 110);
+  position: relative;
 }
 
 .logo {
@@ -15,9 +16,67 @@
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.dekstopMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mobileMenu {
+  display: none;
+}
+
+
+.burger {
+  padding: 1rem;
+  color: white;
+  background-color: transparent;
+  display: none;
+  border: 1px solid white;
+  cursor: pointer;
+
+}
+.mobileMenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+  .dekstopMenu { 
+    display: none;
+  }
+  .dekstopLogoutBtn {
+    display: none;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+ align-items: center;
+  gap: 1rem;
+  background-color: var(--bg);
+  padding: 1rem;
+  border: 1px solid white;
+
 }
 
 
 
+}

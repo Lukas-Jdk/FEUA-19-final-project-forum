@@ -1,17 +1,15 @@
-
 .navList {
-display: flex;
-gap: 2rem;
-list-style: none;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-.navList  {
- list-style: none;
+.navList {
+  list-style: none;
 }
 
 .navList a {
   text-decoration: none;
-
 }
 .logoutBtn {
   padding: 0.4rem 1.2rem;
@@ -20,6 +18,7 @@ list-style: none;
   color: var(--white);
   background-color: rgb(21, 83, 94);
   cursor: pointer;
+   font-family: var(--font-second);
 }
 
 .logoutBtn:hover {
@@ -28,13 +27,14 @@ list-style: none;
 }
 
 .loginBtn {
-border: 1px solid gray;
-padding: 0.2rem 1.3rem;
-color: var(--white);
-border-radius: 15px;
-border: none;
-background-color: rgb(21, 83, 94);
+  border: 1px solid gray;
+  padding: 0.4rem 1.3rem;
+  color: var(--white);
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(21, 83, 94);
   cursor: pointer;
+  font-family: var(--font-second);
 }
 .loginBtn:hover {
   background-color: rgb(255, 255, 255);
@@ -42,15 +42,24 @@ background-color: rgb(21, 83, 94);
 }
 
 .registerBtn {
-border: 1px solid gray;
-padding: 0.2rem 0.8rem;
-color: var(--white);
-border-radius: 15px;
-border: none;
-background-color: rgb(21, 83, 94);
+  border: 1px solid gray;
+  padding: 0.4rem 0.9rem;
+  color: var(--white);
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(21, 83, 94);
   cursor: pointer;
+  font-family: var(--font-second);
 }
 .registerBtn:hover {
   background-color: rgb(255, 255, 255);
   color: var(--black);
+}
+
+
+
+@media (max-width: 768px)  {
+ .navList {
+  gap: 1rem;
+ }
 }

@@ -30,10 +30,14 @@ const UserMenu = () => {
           ) : (
             <>
               <li>
-                <Link className={styles.loginBtn} href="/login">Login</Link>
+                <Link className={styles.loginBtn} href="/login">
+                  Login
+                </Link>
               </li>
               <li>
-                <Link className={styles.registerBtn} href="/register">Register</Link>
+                <Link className={styles.registerBtn} href="/register">
+                  Register
+                </Link>
               </li>
             </>
           )}

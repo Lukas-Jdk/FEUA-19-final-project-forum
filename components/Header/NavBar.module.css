@@ -11,3 +11,18 @@ list-style: none;
   font-family: var(--font-primary);
   color: var(--white);
 }
+
+.navList a:hover { 
+text-shadow: rgb(255, 255, 255) 1px 0 10px;
+}
+
+@media (max-width: 768px) {
+.navList{
+  gap: 0.5rem;
+  
+}
+
+.navList a  {
+  font-size: 0.9rem;
+}
+}

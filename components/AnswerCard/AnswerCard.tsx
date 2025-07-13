@@ -32,19 +32,9 @@ const AnswerCard = ({ answer, onUpdate }: Props) => {
     }
   };
   
-  const handleDislike = async () => {
-  try {
-    await axios.patch(`/answers/${answer.id}/dislike`);
-    onUpdate();
-  } catch (error) {
-    console.error("Dislike error", error);
-  }
-};
-  
-
   const handleDelete = async () => {
     try {
-      await axios.delete(`/answer/${answer.id}`);
+     await axios.delete(`/answers/${answer.id}`);
       onUpdate();
     } catch (error) {
       console.error("Delete error", error);

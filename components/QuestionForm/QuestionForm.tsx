@@ -23,19 +23,19 @@ const QuestionForm = () => {
     }
   };
 
-  const isLoggedIn = typeof window !== "undefined" && localStorage.getItem("token");
+  const isLoggedIn =
+    typeof window !== "undefined" && localStorage.getItem("token");
   if (!isLoggedIn) return <p>You must be logged in to ask a question.</p>;
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <h2>Ask a Question</h2>
       <textarea
-      className={styles.textarea}
+        className={styles.textarea}
         placeholder="Your question..."
         value={text}
         onChange={(e) => setText(e.target.value)}
         required
-
       />
       <button type="submit">Submit</button>
       {error && <p className={styles.error}>{error}</p>}
