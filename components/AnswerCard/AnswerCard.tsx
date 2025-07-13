@@ -1,7 +1,7 @@
-import styles from './AnswerCard.module.css';
-import { Answer } from '@/types/types';
-import axios from '@/axios/axios';
-import { useEffect, useState } from 'react';
+import styles from "./AnswerCard.module.css";
+import { Answer } from "@/types/types";
+import axios from "@/axios/axios";
+import { useEffect, useState } from "react";
 
 interface Props {
   answer: Answer;
@@ -15,7 +15,7 @@ const AnswerCard = ({ answer, onUpdate }: Props) => {
     const token = localStorage.getItem("token");
     if (token) {
       try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
+        const payload = JSON.parse(atob(token.split(".")[1]));
         setUserId(payload.userId);
       } catch (e) {
         console.error("Token decode error", e);
@@ -31,6 +31,16 @@ const AnswerCard = ({ answer, onUpdate }: Props) => {
       console.error("Like error", error);
     }
   };
+  
+  const handleDislike = async () => {
+  try {
+    await axios.patch(`/answers/${answer.id}/dislike`);
+    onUpdate();
+  } catch (error) {
+    console.error("Dislike error", error);
+  }
+};
+  
 
   const handleDelete = async () => {
     try {
@@ -42,19 +52,23 @@ const AnswerCard = ({ answer, onUpdate }: Props) => {
   };
 
   return (
-    <div className={styles.card}>
-      <p>{answer.answer_text}</p>
-      <p>👍 {answer.gained_likes_number}</p>
+    <main>
+      <div className={styles.card}>
+        <p>{answer.answer_text}</p>
 
-      {userId && (
-        <div className={styles.btnGroup}>
-          <button onClick={handleLike}>Like</button>
-          {userId === answer.user_id && (
-            <button onClick={handleDelete}>Delete</button>
+        <div className={styles.likeDelete}>
+          <p>👍 {answer.gained_likes_number}  <button onClick={handleLike} className={styles.likeBtn} >Like</button></p>
+          {userId && (
+            <div className={styles.btnGroup}>
+             
+              {userId === answer.user_id && (
+                <button onClick={handleDelete} className={styles.deleteBtn}>Delete answer</button>
+              )}
+            </div>
           )}
         </div>
-      )}
-    </div>
+      </div>
+    </main>
   );
 };
 

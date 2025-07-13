@@ -28,14 +28,19 @@ const AnswerForm = ({ questionId, onNew }: Props) => {
   if (!isLoggedIn) return null;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.formWrapper}>
+      <p>New Answer</p>
       <textarea
+      className={styles.textarea}
       value={text}
       onChange={(e) => setText(e.target.value)}
       placeholder="Your answer"
       required
       />
-      <button type="submit">Answer</button>
+      <div className={styles.answerBtn}>
+        <button type="submit">Comment</button>
+        </div>
+  
     </form>
   );
 };

@@ -6,6 +6,8 @@ import Layout from "@/components/Layout/Layout";
 import AnswerCard from "@/components/AnswerCard/AnswerCard";
 import AnswerForm from "@/components/AnswerForm/AnswerForm";
 import authRedirect from "@/hooks/authRedirect";
+import styles from "@/styles/id.module.css";
+import QuestionCard from "@/components/QuestionCard/QuestionCard";
 
 const QuestionPage = () => {
   authRedirect();
@@ -59,21 +61,20 @@ const QuestionPage = () => {
 
   return (
     <Layout>
-      <div style={{ padding: "2rem" }}>
-        {error && <p>{error}</p>}
+      <div className={styles.idQuestion}>
+        <h2>Question</h2>
         {question && (
-          <>
-            <h2>{question.question_text}</h2>
-            <p>{new Date(question.date).toLocaleDateString()}</p>
-            <p>User: {question.user_id}</p>
-          </>
+          <QuestionCard
+            question={question}
+            showDelete={userId === question.user_id}
+            onDelete={handleDelete}
+          />
         )}
-
-       {question && userId === question.user_id && (
-  <button onClick={handleDelete}>Delete Question</button>
-)}
-
-        <h2>Answers</h2>
+        {error && <p>{error}</p>}
+      </div>
+   <h2 className={styles.comments}>Answers</h2>
+      <div className={styles.idAnswer}>
+     
         {answers.map((answer) => (
           <AnswerCard key={answer.id} answer={answer} onUpdate={fetchData} />
         ))}

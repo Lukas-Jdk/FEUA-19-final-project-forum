@@ -13,3 +13,44 @@ list-style: none;
   text-decoration: none;
 
 }
+.logoutBtn {
+  padding: 0.4rem 1.2rem;
+  border-radius: 15px;
+  border: none;
+  color: var(--white);
+  background-color: rgb(21, 83, 94);
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--black);
+}
+
+.loginBtn {
+border: 1px solid gray;
+padding: 0.2rem 1.3rem;
+color: var(--white);
+border-radius: 15px;
+border: none;
+background-color: rgb(21, 83, 94);
+  cursor: pointer;
+}
+.loginBtn:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--black);
+}
+
+.registerBtn {
+border: 1px solid gray;
+padding: 0.2rem 0.8rem;
+color: var(--white);
+border-radius: 15px;
+border: none;
+background-color: rgb(21, 83, 94);
+  cursor: pointer;
+}
+.registerBtn:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--black);
+}

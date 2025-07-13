@@ -1,0 +1,40 @@
+.formWrapper {
+  max-width: 900px;
+ margin: auto;
+}
+
+.formWrapper p {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-second);
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--font-second);
+  font-size: 16px;
+  border: 1px solid var(--bg);
+}
+
+.answerBtn  {
+  display: flex;
+  justify-content: center;
+padding-top: 2rem;
+}
+
+.answerBtn  button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 15px;
+  border: 1px solid var(--bg);
+  background-color: var(--bg);
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-second);
+}
+
+.answerBtn  button:hover {
+  background-color: rgb(4, 51, 54);
+ 
+}

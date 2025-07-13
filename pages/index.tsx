@@ -34,7 +34,7 @@ const HomePage = () => {
         <div className={styles.cardWrapper}>
           <h1>Question List</h1>
 
-          <div style={{ marginBottom: "1rem" }}>
+          <div className={styles.questionList}>
             <button onClick={() => setFilter("all")}>All</button>
             <button onClick={() => setFilter("answered")}>Answered</button>
             <button onClick={() => setFilter("unanswered")}>Unanswered</button>

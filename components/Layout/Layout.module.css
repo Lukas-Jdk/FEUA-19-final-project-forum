@@ -5,5 +5,17 @@
   min-height: 100vh;
 }
 .main {
+  padding: 0 2rem;
   flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  height: 80px;
+  background-color: var(--bg);
+  color: white;
+  font-family: var(--font-primary);
 }

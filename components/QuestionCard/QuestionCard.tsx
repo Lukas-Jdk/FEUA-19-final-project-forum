@@ -5,24 +5,25 @@ import React from "react";
 
 interface Props {
   question: Question;
+  showDelete?: boolean;
+  onDelete?: () => void;
 }
 
-const QuestionCard: React.FC<Props> = ({ question }) => {
+const QuestionCard: React.FC<Props> = ({ question, showDelete = false, onDelete }) => {
   const router = useRouter();
 
   return (
-   <div
-  className={styles.questionCard}
-  onClick={() => router.push(`/question/${question.id}`)}
->
+   <div className={styles.questionCard}
+  onClick={() => router.push(`/question/${question.id}`)}>
   <h3>{question.question_text}</h3>
-
-  <p>
-    {question.date ? new Date(question.date).toLocaleString() : "Date unavailable"}
-  </p>
-
-  <p>{question.user_id}</p>
-</div>
+ 
+       <div className={styles.bottom}> 
+        <p>{question.date ? new Date(question.date).toLocaleString() : "Date unavailable"}</p>
+     {showDelete && onDelete && (
+        <button onClick={onDelete}>Delete Question</button>
+      )}</div>
+  </div>
+ 
   );
 };
 

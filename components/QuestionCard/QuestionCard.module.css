@@ -1,0 +1,40 @@
+.questionCard {
+  border: 1px solid var(--bg);
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+ flex-direction: column;
+ gap: 3rem;
+cursor: pointer;
+}
+
+.questionCard h3 {
+  font-family: var(--font-second);
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+}
+
+.questionCard p {
+  font-size: 0.7rem;
+  font-family: var(--font-second);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom button {
+  padding: 0.5rem 0.7rem;
+  background-color: rgb(243, 103, 103);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+.bottom button:hover {
+  background-color: red;
+}

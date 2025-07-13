@@ -1,3 +1,13 @@
+:root {
+  --white: #ffffff;
+  --black: #171717;
+
+  --bg: rgb(16, 107, 110);
+
+  --font-primary: 'Poppins', Arial, Helvetica, sans-serif;
+  --font-second: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

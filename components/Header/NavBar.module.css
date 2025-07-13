@@ -8,4 +8,6 @@ list-style: none;
 
 .navList a {
   text-decoration: none;
+  font-family: var(--font-primary);
+  color: var(--white);
 }

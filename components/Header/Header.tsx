@@ -1,12 +1,13 @@
 import styles from './Header.module.css';
 import NavBar from './NavBar';
 import UserMenu from './UserMenu';
+import Link from 'next/link'
 
 const Header = () => {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.container}>
-          <div className={styles.Logo}>ForumApp</div>
+          <Link href="/" className={styles.logo}>qForum</Link>
           <NavBar />
           <UserMenu />
       </div>

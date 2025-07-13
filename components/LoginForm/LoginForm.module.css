@@ -1,18 +1,25 @@
 .form {
   height: 500px;
   max-width: 600px;
-  margin: 5rem auto;
- border: 1px solid gray;
+  margin: 8rem auto;
+ border: 1px solid #048ea0;
+ border-radius: 15px;
+ box-shadow: rgb(42, 131, 134) 0px 1px 120px -12px inset, rgba(39, 169, 179, 0.3) 0px 11px 36px -18px inset, rgb(42, 131, 134) 0px 30px 60px -12px inset;
+
 }
 
 .form h1 {
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  font-family: var(--font-primary);
+  color: var(--black);
 }
 
 .redWarrning {
+  text-align: center;
   color: red;
+  padding-top: 1rem;
 }
 .form input {
   width: 50%;
@@ -38,11 +45,19 @@
 .form button {
   width: 150px;
   height: 35px;
-  border: 1px solid rgb(39, 30, 161);
-  margin: 1rem auto 0 auto;
+  border: 1px solid #048ea0;
+  background-color: #268692;
+  color: var(--white);
+  margin: 3rem auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   border-radius: 15px;
+  font-family: var(--font-primary);
+}
+
+.form button:hover { 
+ background-color: #fdfdfd;
+ color: var(--black);
 }
