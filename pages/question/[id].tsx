@@ -20,7 +20,6 @@ const QuestionPage = () => {
 
   const fetchData = async () => {
     try {
-      // 1. Gauti visus klausimus ir rasti pagal ID
       const qRes = await axios.get("/questions");
       const selected = qRes.data.questions.find(
         (q: Question) => q.id === String(id)
@@ -32,7 +31,7 @@ const QuestionPage = () => {
         return;
       }
 
-      // 2. Gauti atsakymus
+     
       const aRes = await axios.get(`/answers/${String(id)}`);
       setAnswers(aRes.data.answers);
     } catch (err) {

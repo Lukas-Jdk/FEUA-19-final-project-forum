@@ -5,8 +5,9 @@ margin: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: 5rem;
+margin-top: 8rem;
 padding: 2rem 0;
+border-radius: 15px;
 box-shadow: rgb(42, 131, 134) 0px 1px 120px -12px inset, rgba(39, 169, 179, 0.3) 0px 11px 36px -18px inset, rgb(42, 131, 134) 0px 30px 60px -12px inset;
 }
 

@@ -18,6 +18,12 @@ const Header = () => {
           <NavBar />
         </div>
 
+        <div className={styles.usermenu}>
+          <UserMenu />
+        </div>
+
+
+
         <button
           className={styles.burger}
           onClick={() => setShowMenu(!showMenu)}

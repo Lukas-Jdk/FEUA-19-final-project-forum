@@ -11,6 +11,11 @@ const HomePage = () => {
   const [filter, setFilter] = useState<"all" | "answered" | "unanswered">("all");
 
   const fetchQuestions = async () => {
+    const token = localStorage.getItem("token");
+    if(!token) {
+      setError("You must be logged in to view questions.");
+      return;
+    }
     try {
       let url = "/questions";
       if (filter === "answered") url = "/questions/filtered?answered=true";
@@ -42,7 +47,7 @@ const HomePage = () => {
 
           {error && <p>{error}</p>}
 
-          {questions.length === 0 ? (
+          {questions.length === 0 && !error ? (
             <p>There is no questions</p>
           ) : (
             questions.map((q) => <QuestionCard key={q.id} question={q} />)
